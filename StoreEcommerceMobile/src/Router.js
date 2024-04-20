@@ -109,7 +109,7 @@ const MainPageDetail = () => {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         options={{
           headerShown: false,
           headerTitle: 'Receipes',
@@ -118,7 +118,7 @@ const MainPageDetail = () => {
         }}
         name="MainPage"
         component={MainPage}
-      />
+      /> */}
       <Stack.Screen
         options={{
           headerShown: false,
