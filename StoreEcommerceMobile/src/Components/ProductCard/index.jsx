@@ -5,9 +5,11 @@ import { fetchBasketData } from '../../Redux/Slices/basketSlice';
 import { fetchFavoritesData } from '../../Redux/Slices/favoritesSlice';
 import { FetchDeleteMethod, FetchPostMethod, FetchPutMethod } from '../../Redux/FetchServices';
 import styles from "./ProductCard.Style.js"
+import { MD3Colors,Icon } from 'react-native-paper';
 
-const ProductCard = ({ item,navigation }) => {
+const ProductCard = ({ item, navigation }) => {
   const [favoriteAdd, setFavoriteAdd] = useState(false);
+  const [favoriteProduct, setFavoriteProduct] = useState([]);
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.users.users);
   const favoritesData = useSelector((state) => state.favorites);
@@ -64,7 +66,7 @@ const ProductCard = ({ item,navigation }) => {
     <View style={styles.container}>
       <View style={styles.innerContainer}>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate("DetailPage",{item:item})}>
+          <TouchableOpacity onPress={() => navigation.navigate("DetailPage", { item: item })}>
             <View style={styles.imageContainer}>
               <Image source={{ uri: item.productUrl }} style={styles.image} resizeMethod="auto" />
             </View>
@@ -86,7 +88,12 @@ const ProductCard = ({ item,navigation }) => {
               <Text>Add Basket</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handleFavoritesClick()} style={styles.heartButton}>
-              <Text style={styles.heartIcon}>{favoriteAdd ? '❤️' : '🤍'}</Text>
+              <Icon
+                source="heart"
+                color={favoriteAdd ? MD3Colors.error50 : MD3Colors.neutralVariant70}
+                size={20}
+                onPress={() => handleDeleteBasketItem()}
+              />
             </TouchableOpacity>
           </View>
         </View>

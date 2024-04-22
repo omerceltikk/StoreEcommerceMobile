@@ -1,13 +1,10 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-// import LogInPage from './Pages/LogInPage';
-// import SıgnUpPage from './Pages/SıgnUpPage';
 import MainPage from './Pages/MainPage';
-// import DetailPage from './Pages/DetailPage';
 import ProfilePage from './Pages/ProfilePage';
-// import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {Icon} from 'react-native-paper';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {DefaultTheme, Icon} from 'react-native-paper';
 import BasketPage from './Pages/BasketPage';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductPage from './Pages/ProductPage';
@@ -17,15 +14,22 @@ import Login from './Pages/Auth/Login';
 import Signup from './Pages/Auth/Signup';
 
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    notification : "#E5DDC5",
+  },
+};
 const Router = () => {
   const Tab = createMaterialBottomTabNavigator();
   const userData = useSelector((state) => state.users);
 
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
-        activeColor="#004225"
-        inactiveColor="#cecece"
+        activeColor="#3b3b3b"
+        inactiveColor="#E5DDC5"
         tabBarColor="#000"
         barStyle={{backgroundColor: '#000', borderRadius: 25}}>
         <Tab.Screen
@@ -47,9 +51,9 @@ const Router = () => {
             headerTitle: 'Basket',
             tabBarLabel: 'Basket',
             headerTitleAlign: 'center',
-            headerTintColor: '#5C8374',
+            headerTintColor: '#E5DDC5',
             tabBarIcon: ({color}) => (
-              <Icon source="account" color={color} size={26} />
+              <Icon source="basket" color={color} size={26} />
             ),
           }}
           name="BasketSectionNavigator"
@@ -62,7 +66,7 @@ const Router = () => {
             headerTitle: 'Profile',
             tabBarLabel: 'Profile',
             headerTitleAlign: 'center',
-            headerTintColor: '#5C8374',
+            headerTintColor: '#E5DDC5',
             tabBarIcon: ({color}) => (
               <Icon source="account" color={color} size={26} />
             ),
@@ -83,8 +87,8 @@ const AuthNavigator = () => {
       <Stack.Screen
         options={{
           headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerTitle: 'Login',
+          headerTintColor: '#E5DDC5',
           headerTitleAlign: 'center',
         }}
         name="LoginPage"
@@ -93,8 +97,8 @@ const AuthNavigator = () => {
       <Stack.Screen
         options={{
           headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerTitle: 'Sign Up',
+          headerTintColor: '#E5DDC5',
           headerTitleAlign: 'center',
         }}
         name="SignupPage"
@@ -109,21 +113,22 @@ const MainPageDetail = () => {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
+      <Stack.Screen
         options={{
-          headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerShown: true,
+          headerTitle: 'Home',
+          headerTintColor: '#E5DDC5',
           headerTitleAlign: 'center',
+          headerStyle: { backgroundColor: '#000', borderBottomWidth:1,borderBottomColor:"#ddd" },
         }}
         name="MainPage"
         component={MainPage}
-      /> */}
+      />
       <Stack.Screen
         options={{
-          headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerShown: true,
+          headerTitle: 'Products',
+          headerTintColor: '#000',
           headerTitleAlign: 'center',
         }}
         name="ProductPage"
@@ -131,9 +136,9 @@ const MainPageDetail = () => {
       />
       <Stack.Screen
         options={{
-          headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerShown: true,
+          headerTitle: 'Details',
+          headerTintColor: '#000',
           headerTitleAlign: 'center',
         }}
         name="DetailPage"
@@ -149,9 +154,9 @@ const BasketSectionNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen
         options={{
-          headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerShown: true,
+          headerTitle: 'Basket',
+          headerTintColor: '#000',
           headerTitleAlign: 'center',
         }}
         name="BasketPage"
@@ -159,9 +164,9 @@ const BasketSectionNavigator = () => {
       />
       <Stack.Screen
         options={{
-          headerShown: false,
-          headerTitle: 'Receipes',
-          headerTintColor: '#5C8374',
+          headerShown: true,
+          headerTitle: 'Buy',
+          headerTintColor: '#E5DDC5',
           headerTitleAlign: 'center',
         }}
         name="CompleteBuy"

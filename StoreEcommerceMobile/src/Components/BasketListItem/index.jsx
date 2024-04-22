@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, View } from 'react-native'
 import styles from "./BasketFavListItem.Style"
-import { Avatar, Text, IconButton, MD3Colors } from 'react-native-paper';
+import { Avatar, Text, IconButton, MD3Colors, Icon } from 'react-native-paper';
 import { FetchDeleteMethod } from '../../Redux/FetchServices';
 import { useDispatch } from 'react-redux';
 import { deletefavMethod } from '../../Redux/Slices/favoritesSlice';
@@ -29,9 +29,9 @@ const BasketListItem = ({ data,userData }) => {
         </Text>
       </View>
       <View style={styles.areaTag}>
-        <IconButton
-          icon="camera"
-          iconColor={MD3Colors.error50}
+        <Icon
+          source="delete"
+          color={MD3Colors.error50}
           size={20}
           onPress={() => handleDeleteBasketItem()}
         />

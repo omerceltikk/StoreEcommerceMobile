@@ -1,23 +1,25 @@
 import React from 'react'
-import {  View, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
-import { FetchPostMethod,RefreshToken } from '../../Redux/FetchServices';
+import { View, Image, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { FetchPostMethod, RefreshToken } from '../../Redux/FetchServices';
 import { Formik } from 'formik';
 import Loading from '../Loading';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { showMessage } from 'react-native-flash-message';
 import styles from "./Auth.Style"
-import { loginUserReducer } from '../../Redux/Slices/userSlice';
+import { loginUserReducer, setStatus } from '../../Redux/Slices/userSlice';
 import { Text } from 'react-native-paper';
 const Login = ({ navigation }) => {
   const dispatch = useDispatch()
-  
-  
+  const userData = useSelector((state) => state.users);
+
   const onSubmit = async (values) => {
     const valuesBody = {
       userName: values.userName,
       password: values.password,
       userStatus: "user",
     }
+    await dispatch(setStatus("loading"));
+
     const res = await FetchPostMethod("auth/login", valuesBody).then((res) => {
       if (res.status != 200) {
         const response = RefreshToken();
@@ -36,19 +38,23 @@ const Login = ({ navigation }) => {
       }
     })
     await dispatch(loginUserReducer(res));
-    await console.log(res);
+    await dispatch(setStatus("fulfilled"));
+    await console.log(userData.status);
     await showMessage({
       message: "logged in succesfully",
       type: "success",
     });
   }
-
-
-
+  if (userData.status == "loading") {
+    return (
+      <Loading />
+    )
+  }
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-      <Text style={styles.textColor} variant="displayMedium">Display Medium</Text>
+        <Text style={styles.textColor} variant="displayMedium">Login &</Text>
+        <Text style={styles.textColor} variant="displayMedium">Explore</Text>
         <Formik
           initialValues={{ userName: "", password: "" }}
           onSubmit={values => onSubmit(values)}

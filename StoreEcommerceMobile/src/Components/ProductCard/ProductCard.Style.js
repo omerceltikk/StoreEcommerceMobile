@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     right: 10,
     borderRadius: 20,
     padding: 5,
-    backgroundColor: 'red',
+    borderColor: 'red',
   },
   heartIcon: {
     color: 'white',

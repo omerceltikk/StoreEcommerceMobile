@@ -1,12 +1,11 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-
+import { View, Text, Image } from 'react-native'
+import styles from "./Loading.Style"
+import LottieView from "lottie-react-native";
 const Loading = () => {
   return (
-    <View>
-      <Text>
-        Loading...
-      </Text>
+    <View style={styles.container}>
+    <LottieView source={require("../../../assets/lottieLoading.json")} style={styles.imageGif}/>
     </View>
   )
 }

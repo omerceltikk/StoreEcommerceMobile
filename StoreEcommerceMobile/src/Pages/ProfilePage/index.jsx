@@ -37,7 +37,6 @@ const ProfilePage = () => {
   }, [dispacth, favoritesData, favoritesDataStatus])
 
   useEffect(() => {
-    console.log(ordersDataStatus);
     if (ordersDataStatus == "idle") {
           dispacth(fetchOrdersData(`order?userId=${userData.users[0].userId}`));
         }
@@ -46,7 +45,7 @@ const ProfilePage = () => {
     }
   }, [dispacth, ordersData, ordersDataStatus])
 
-  if (favoritesDataStatus == "loading" || ordersDataStatus == "loading") {
+  if (favoritesDataStatus == "loading" || ordersDataStatus == "loading" || userData.status == "loading") {
     return (
       <Loading />
     )

@@ -16,8 +16,8 @@ const ProductPage = ({navigation}) => {
       dispatch(fetchProductsData());
     }
     if (status === "fulfilled") {
-      const filteredData = data.products.filter((item) => 5 == item.categoryId);
-      setProducts(filteredData);
+      // const filteredData = data.products.filter((item) => 5 == item.categoryId);
+      setProducts(data.products);
     }
   }, [dispatch, data /*categoryId*/]);
 

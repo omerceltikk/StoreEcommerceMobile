@@ -58,5 +58,6 @@ export default styles = StyleSheet.create({
     fontSize: 16,
     color: '#bbb',
     paddingHorizontal: 20,
+    
   },
 });
