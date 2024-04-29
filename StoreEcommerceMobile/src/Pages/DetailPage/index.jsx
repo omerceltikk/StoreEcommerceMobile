@@ -12,7 +12,7 @@ const ProductDetail = ({ route }) => {
   const [product, setProduct] = useState(item);
   const [count, setCount] = useState(1);
   const sizes = ['S', 'M', 'L', 'XL', 'XXL']
-
+  const userData = useSelector((state) => state.users.users)
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -50,7 +50,9 @@ const ProductDetail = ({ route }) => {
             <Text style={styles.count}>{count}</Text>
             <Button onPress={() => setCount(count + 1)} style={styles.countButton} disabled={product.productStockCount - 1 === count}>+</Button>
           </View>
-          <BuyButtonGroup count={count} item={product} />
+          {
+            userData.length > 0 && <BuyButtonGroup count={count} item={product} />
+          }
         </View>
       </View>
     </ScrollView>

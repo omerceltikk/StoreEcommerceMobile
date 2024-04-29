@@ -1,14 +1,18 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-export default styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems:"center",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#000',
     flex: 1,
   },
-  imageGif:{
-    width:250,
-    height:300,
+  imageGif: {
+    width: 250,
+    height: 300,
+  },
+  tag:{
+    fontSize:20,
+    color:"#E5DDC5"
   }
 });

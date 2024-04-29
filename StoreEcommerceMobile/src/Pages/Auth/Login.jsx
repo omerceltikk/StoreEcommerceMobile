@@ -39,7 +39,6 @@ const Login = ({ navigation }) => {
     })
     await dispatch(loginUserReducer(res));
     await dispatch(setStatus("fulfilled"));
-    await console.log(userData.status);
     await showMessage({
       message: "logged in succesfully",
       type: "success",

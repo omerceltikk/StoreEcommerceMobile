@@ -34,8 +34,6 @@ export default styles = StyleSheet.create({
     gap: 10,
   },
   button: {
-    backgroundColor: '#5C8374',
-    color: 'white',
     padding: 10,
     borderRadius: 10,
     fontSize: 12,
@@ -58,6 +56,10 @@ export default styles = StyleSheet.create({
     fontSize: 16,
     color: '#bbb',
     paddingHorizontal: 20,
-    
+  },
+  productsArea: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
 });
