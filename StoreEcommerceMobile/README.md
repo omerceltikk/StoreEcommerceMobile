@@ -3,7 +3,6 @@
 <div style="display:flex">
 <img src="./assets/applicationimg/1.png" alt="drawing" width="150"/>
 <img src="./assets/applicationimg/2.png" alt="drawing" width="150"/>
-<img src="./assets/applicationimg/3.png" alt="drawing" width="150"/>
 <img src="./assets/applicationimg/4.png" alt="drawing" width="150"/>
 <img src="./assets/applicationimg/5.png" alt="drawing" width="150"/>
 <img src="./assets/applicationimg/6.png" alt="drawing" width="150"/>
