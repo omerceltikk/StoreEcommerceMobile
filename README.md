@@ -1,13 +1,13 @@
 # Store E-Commerce Mobile
 
 <div style="display:flex">
-<img src="../Assets/1.png" alt="drawing" width="150"/>
-<img src="../Assets/2.png" alt="drawing" width="150"/>
-<img src="../Assets/3.png" alt="drawing" width="150"/>
-<img src="../Assets/4.png" alt="drawing" width="150"/>
-<img src="../Assets/5.png" alt="drawing" width="150"/>
-<img src="../Assets/6.png" alt="drawing" width="150"/>
-<img src="../Assets/7.png" alt="drawing" width="150"/>
+<img src="./assets/1.png" alt="drawing" width="150"/>
+<img src="./assets/2.png" alt="drawing" width="150"/>
+<img src="./assets/3.png" alt="drawing" width="150"/>
+<img src="./assets/4.png" alt="drawing" width="150"/>
+<img src="./assets/5.png" alt="drawing" width="150"/>
+<img src="./assets/6.png" alt="drawing" width="150"/>
+<img src="./assets/7.png" alt="drawing" width="150"/>
 </div>
 ## Step 1: Start the Metro Server
 
