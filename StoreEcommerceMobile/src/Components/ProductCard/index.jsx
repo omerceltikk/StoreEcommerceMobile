@@ -19,7 +19,7 @@ const ProductCard = ({ item, navigation }) => {
       dispatch(fetchFavoritesData());
     }
     if (favoritesData.status == "fulfilled") {
-      const filteredData = favoritesData.favorites.find((favoriteItem) => favoriteItem.productId == item.productId && favoriteItem.userId == userData[0].userId);
+      const filteredData = favoritesData.favorites.find((favoriteItem) => favoriteItem.productId == item.productId && favoriteItem.userId == userData[0]?.userId);
       if (filteredData) {
         setFavoriteAdd(true);
         setFavoriteProduct(filteredData);
