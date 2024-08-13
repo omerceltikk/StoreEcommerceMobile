@@ -2,7 +2,7 @@
 
 export const FetchGetMethod = async (url) => {
 
-  const getUrl = await fetch(`https://ksvc-storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}`, {
+  const getUrl = await fetch(`https://storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}`, {
     method: 'GET',
     mode: "cors",
     headers: {
@@ -17,7 +17,7 @@ export const FetchGetMethod = async (url) => {
 }
 export const FetchDeleteMethod = async (url, id) => {
 
-  await fetch(`https://ksvc-storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}/${id}`, {
+  await fetch(`https://storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}/${id}`, {
     method: 'DELETE',
     mode: "cors",
     headers: {
@@ -33,7 +33,7 @@ export const FetchDeleteMethod = async (url, id) => {
 
 export const FetchPostMethod = (url, body) => {
 
-  const request = fetch(`https://ksvc-storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}`, {
+  const request = fetch(`https://storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}`, {
     method: 'POST',
     mode: "cors",
     headers: {
@@ -46,7 +46,7 @@ export const FetchPostMethod = (url, body) => {
   return request
 }
 export const FetchPutMethod = (url, body) => {
-  const request = fetch(`https://ksvc-storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}`, {
+  const request = fetch(`https://storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/${url}`, {
     method: 'PUT',
     mode: "cors",
     headers: {
@@ -59,7 +59,7 @@ export const FetchPutMethod = (url, body) => {
   return request
 }
 export const RefreshToken = () => {
-  const request = fetch(`https://ksvc-storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/auth/refresh`, {
+  const request = fetch(`https://storeecommerceapp-omerceltik123-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/auth/refresh`, {
     method: 'POST',
     mode: "cors",
     headers: {
